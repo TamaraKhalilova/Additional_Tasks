@@ -14,12 +14,24 @@
     </style>
 </head>
 <body>
-    <script defer>
-        const p = document.querySelector('#js-changeable');
-    </script>
-
     <p id="js-changeable">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo et, quis ratione corrupti odit perferendis. Neque distinctio voluptates explicabo optio exercitationem ipsum non rerum aperiam, qui reprehenderit, blanditiis iste vero.</p>
 
+    <script>
+        const p = document.querySelector("#js-changeable");
 
+        document.addEventListener('touchstart', (e)=>{
+            switch (e.touches.length) {
+                case 1:
+                    p.style.backgroundColor = 'red';
+                    break;
+                case 2:
+                    p.style.backgroundColor = 'blue';
+                    break;
+                case 3:
+                    p.style.backgroundColor = 'green';
+                    break;
+                }
+        });
+    </script>
 </body>
 </html>
